@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	accounts.Account()
+	accounts.CompatibleAccounts()
 }

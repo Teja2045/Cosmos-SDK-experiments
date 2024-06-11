@@ -39,7 +39,8 @@ func CompatibleAccounts() {
 	gnarkPubkey := gnarkPrivkey.PublicKey
 
 	// msg to sign
-	msg := []byte("message")
+	msg := []byte("messag0e")
+	msg2 := []byte("messa1ge")
 
 	sign, err := privkey.Sign(msg)
 	if err != nil {
@@ -51,7 +52,7 @@ func CompatibleAccounts() {
 	fmt.Println("normal verification:", isVerified)
 
 	// verify with gnark pubkey
-	isVerified, err = gnarkPubkey.Verify(sign, msg, sha256.New())
+	isVerified, err = gnarkPubkey.Verify(sign, msg2, sha256.New())
 	if err != nil {
 		panic(err)
 	}
